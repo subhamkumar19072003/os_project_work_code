@@ -6,11 +6,11 @@
 
 // structure for a query
 struct Query {
-    int id; // query id
-    int time_left; // time left to handle the query
+    int id; 
+    int time_left; 
 };
 
-// function to initialize a query with a given id
+
 struct Query init_query(int id) {
     struct Query q;
     q.id = id;
@@ -18,7 +18,7 @@ struct Query init_query(int id) {
     return q;
 }
 
-// function to check if a queue is empty
+//check if a queue is empty
 bool is_empty(struct Query* queue, int size) {
     int i;
     for (i = 0; i < size; i++) {
@@ -29,7 +29,7 @@ bool is_empty(struct Query* queue, int size) {
     return true;
 }
 
-// function to add a query to the back of a queue
+//add a query to the back of a queue
 void enqueue(struct Query* queue, int size, struct Query q) {
     int i;
     for (i = 0; i < size; i++) {
@@ -41,7 +41,7 @@ void enqueue(struct Query* queue, int size, struct Query q) {
     printf("Queue is full!\n");
 }
 
-// function to remove the front query from a queue
+//remove the front query from a queue
 struct Query dequeue(struct Query* queue, int size) {
     if (is_empty(queue, size)) {
         printf("Queue is empty!\n");
@@ -60,7 +60,7 @@ int main() {
     struct Query student_queue[MAX_SIZE]; // declare student queue
     struct Query faculty_queue[MAX_SIZE]; // declare faculty queue
     
-    // add 2 queries to the queues
+    // add 2 queries to the queues other request can be added here
     enqueue(student_queue, MAX_SIZE, init_query(1));
     enqueue(faculty_queue, MAX_SIZE, init_query(2));
 
